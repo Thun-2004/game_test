@@ -1,2 +1,6 @@
-run : ./sfml-app
+run : 
+g++ -o my_game main.cpp Game.cpp -lsfml-graphics -lsfml-window -lsfml-system
+./my_game
+
 get path : brew info sfml
+
