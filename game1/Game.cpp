@@ -1,5 +1,6 @@
 #include "Game.hpp"
 #include <iostream> 
+#include "Game.h"
 //private function
 void Game::initVariables()
 {
@@ -27,6 +28,7 @@ void Game::initWindow()
     this->window = new sf::RenderWindow(this->videoMode, "My window", sf::Style::Titlebar | sf::Style::Close);
     this->window->setFramerateLimit(144); 
 }
+
 
 void Game::initEnemies()
 {
@@ -158,6 +160,7 @@ const bool Game::getEndGame() const
 
 void Game::updateEnemies()
 {
+    //spawning
     if(this->enemies.size() < this->maxEnemies){ //if num of enemies is less than max enemies
         if(this->enemySpawnTimer >= this -> enemySpawnTimerMax){
             this->spawnEnemy();
@@ -167,6 +170,13 @@ void Game::updateEnemies()
         }
     }
 
+    //updating
+    
+
+}
+
+void Game::updateCombat()
+{
     //move and update enemies
     for(int i = 0; i < this->enemies.size(); i++){
         bool deleted = false; 
@@ -198,7 +208,6 @@ void Game::updateEnemies()
     }else{
         this->mouseHeld = false; 
     }
-    
 }
 
 void Game::initText()
