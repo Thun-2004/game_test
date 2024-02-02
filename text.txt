@@ -1,5 +1,12 @@
+setup: 
+g++ -c main.cpp
+g++ -o new-app main.cpp -lsfml-graphics -lsfml-window -lsfml-system
+./new-app
+
+
+
 run : 
-g++ -o my_game main.cpp Game.cpp -lsfml-graphics -lsfml-window -lsfml-system
+g++ -o my_game main.cpp Game.cpp Bullet.cpp Enemy.cpp Player.cpp -lsfml-graphics -lsfml-window -lsfml-system
 ./my_game
 
 get path : brew info sfml
